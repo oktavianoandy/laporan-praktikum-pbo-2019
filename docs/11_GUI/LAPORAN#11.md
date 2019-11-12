@@ -75,7 +75,7 @@ Berikut ini adalah kode program yang sudah kita buat pada percobaan 3, klik link
 [1. class LayoutGUI1841720002Andy](../../src/11_GUI/LayoutGUI1841720002Andy.java)<br>
 [2. class Border1841720002Andy](../../src/11_GUI/Border1841720002Andy.java)<br>
 [3. class Box1841720002Andy](../../src/11_GUI/Box1841720002Andy.java)<br>
-[4. class Grid1841720002Andy](../../src/11_GUI/Grid1841720002Andy.java.java)
+[4. class Grid1841720002Andy](../../src/11_GUI/Grid1841720002Andy.java)
 
 ### Percobaan 4
 
@@ -172,7 +172,7 @@ Perbedaan antara ketiga layout tersebut yaitu :
 
    Kode program di atas digunakan untuk mengatur output agar daat ditampilkan.
 
-4. Apakah fungsi dari kode berikut?
+4. Apakah fungsi dari kode berikut?<br>
    ![contoh screenshot](img/pertanyaan-percobaan4.PNG)<br>
    **Jawab:**<br>
    Kode program di atas digunakan untuk menampilkan form yang ada di dalam class Swing1841720002Andy.
