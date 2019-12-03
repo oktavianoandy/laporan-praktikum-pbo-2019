@@ -56,8 +56,8 @@
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="txtNamaPeminjam" pref="104" max="32767" attributes="0"/>
-                                                          <Component id="txtJudulBuku" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="txtIdAnggota" pref="104" max="32767" attributes="0"/>
+                                                          <Component id="txtIdBuku" alignment="0" max="32767" attributes="0"/>
                                                           <Component id="txtIdPeminjaman" alignment="0" max="32767" attributes="0"/>
                                                       </Group>
                                                       <EmptySpace max="-2" attributes="0"/>
@@ -65,12 +65,12 @@
                                                           <Group type="102" attributes="0">
                                                               <Component id="btnCariBuku" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="textJudulBuku" min="-2" max="-2" attributes="0"/>
                                                           </Group>
                                                           <Group type="102" alignment="0" attributes="0">
                                                               <Component id="btnCariAnggota" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="textAnggota" min="-2" max="-2" attributes="0"/>
                                                           </Group>
                                                       </Group>
                                                   </Group>
@@ -106,16 +106,16 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtNamaPeminjam" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtIdAnggota" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnCariAnggota" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textAnggota" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtJudulBuku" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtIdBuku" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnCariBuku" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textJudulBuku" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -175,11 +175,11 @@
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtNamaPeminjam">
+    <Component class="javax.swing.JTextField" name="txtIdAnggota">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtJudulBuku">
+    <Component class="javax.swing.JTextField" name="txtIdBuku">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtJudulBukuActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIdBukuActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtTanggalPinjam">
@@ -198,21 +198,33 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Tambah Data Baru"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTambahDataActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnHapus">
       <Properties>
         <Property name="text" type="java.lang.String" value="Hapus"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHapusActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCariAnggota">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cari"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCariAnggotaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCariBuku">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cari"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCariBukuActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
@@ -232,15 +244,18 @@
               </Table>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblPeminjamanMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="jLabel6">
+    <Component class="javax.swing.JLabel" name="textAnggota">
       <Properties>
         <Property name="text" type="java.lang.String" value="Nama Anggota"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel7">
+    <Component class="javax.swing.JLabel" name="textJudulBuku">
       <Properties>
         <Property name="text" type="java.lang.String" value="Judul Buku"/>
       </Properties>

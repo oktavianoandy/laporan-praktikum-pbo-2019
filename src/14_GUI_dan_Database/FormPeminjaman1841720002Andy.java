@@ -20,19 +20,19 @@ public class FormPeminjaman1841720002Andy extends javax.swing.JFrame {
      */
     public FormPeminjaman1841720002Andy() {
         initComponents();
-        tampilkanData();
+        tampilkanDataAndy();
         kosongkanFormAndy();
     }
 
     public void kosongkanFormAndy(){
         txtIdPeminjaman.setText("0");
-        txtNamaPeminjam.setText("");
-        txtJudulBuku.setText("");
+        txtIdAnggota.setText("");
+        txtIdBuku.setText("");
         txtTanggalPinjam.setText("");
         txtTanggalKembali.setText("");
     }
     
-    public void tampilkanData(){
+    public void tampilkanDataAndy(){
         String[] kolom = {"ID","Nama_Peminjam","Judul_Buku","Tanggal_Peminjaman","Tanggal_Kembali"};
         ArrayList<Peminjaman1841720002Andy> list = new Peminjaman1841720002Andy().getAllAndy();
         Object rowData[] = new Object[5];
@@ -41,7 +41,7 @@ public class FormPeminjaman1841720002Andy extends javax.swing.JFrame {
         
         for(int i =0;i<list.size();i++){
             rowData[0] = list.get(i).getIdPeminjamanAndy();
-            rowData[1] = list.get(i).getAnggotaAndy().getmNamaAndy();
+            rowData[1] = list.get(i).getAnggotaAndy().getNamaAndy();
             rowData[2] = list.get(i).getBukuAndy().getJudulAndy();
             rowData[3] = list.get(i).getTanggalPinjamAndy();
             rowData[4] = list.get(i).getTanggalKembaliAndy();
@@ -59,7 +59,7 @@ public class FormPeminjaman1841720002Andy extends javax.swing.JFrame {
         
         for(Peminjaman1841720002Andy pem : list){
             rowData[0] = pem.getIdPeminjamanAndy();
-            rowData[1] = pem.getAnggotaAndy().getmNamaAndy();
+            rowData[1] = pem.getAnggotaAndy().getNamaAndy();
             rowData[2] = pem.getBukuAndy().getJudulAndy();
             rowData[3] = pem.getTanggalPinjamAndy();
             rowData[4] = pem.getTanggalKembaliAndy();
@@ -83,8 +83,8 @@ public class FormPeminjaman1841720002Andy extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtIdPeminjaman = new javax.swing.JTextField();
-        txtNamaPeminjam = new javax.swing.JTextField();
-        txtJudulBuku = new javax.swing.JTextField();
+        txtIdAnggota = new javax.swing.JTextField();
+        txtIdBuku = new javax.swing.JTextField();
         txtTanggalPinjam = new javax.swing.JTextField();
         txtTanggalKembali = new javax.swing.JTextField();
         btnSimpan = new javax.swing.JButton();
@@ -94,8 +94,8 @@ public class FormPeminjaman1841720002Andy extends javax.swing.JFrame {
         btnCariBuku = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPeminjaman = new javax.swing.JTable();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        textAnggota = new javax.swing.JLabel();
+        textJudulBuku = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
@@ -114,9 +114,9 @@ public class FormPeminjaman1841720002Andy extends javax.swing.JFrame {
         txtIdPeminjaman.setEditable(false);
         txtIdPeminjaman.setEnabled(false);
 
-        txtJudulBuku.addActionListener(new java.awt.event.ActionListener() {
+        txtIdBuku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtJudulBukuActionPerformed(evt);
+                txtIdBukuActionPerformed(evt);
             }
         });
 
@@ -128,12 +128,32 @@ public class FormPeminjaman1841720002Andy extends javax.swing.JFrame {
         });
 
         btnTambahData.setText("Tambah Data Baru");
+        btnTambahData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTambahDataActionPerformed(evt);
+            }
+        });
 
         btnHapus.setText("Hapus");
+        btnHapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHapusActionPerformed(evt);
+            }
+        });
 
         btnCariAnggota.setText("Cari");
+        btnCariAnggota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCariAnggotaActionPerformed(evt);
+            }
+        });
 
         btnCariBuku.setText("Cari");
+        btnCariBuku.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCariBukuActionPerformed(evt);
+            }
+        });
 
         tblPeminjaman.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -146,11 +166,16 @@ public class FormPeminjaman1841720002Andy extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblPeminjaman.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblPeminjamanMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblPeminjaman);
 
-        jLabel6.setText("Nama Anggota");
+        textAnggota.setText("Nama Anggota");
 
-        jLabel7.setText("Judul Buku");
+        textJudulBuku.setText("Judul Buku");
 
         jLabel8.setText("Format : YYYY/MM/DD");
 
@@ -190,19 +215,19 @@ public class FormPeminjaman1841720002Andy extends javax.swing.JFrame {
                                                         .addComponent(jLabel8))
                                                     .addGroup(layout.createSequentialGroup()
                                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                            .addComponent(txtNamaPeminjam, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
-                                                            .addComponent(txtJudulBuku)
+                                                            .addComponent(txtIdAnggota, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                                                            .addComponent(txtIdBuku)
                                                             .addComponent(txtIdPeminjaman))
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                             .addGroup(layout.createSequentialGroup()
                                                                 .addComponent(btnCariBuku)
                                                                 .addGap(18, 18, 18)
-                                                                .addComponent(jLabel7))
+                                                                .addComponent(textJudulBuku))
                                                             .addGroup(layout.createSequentialGroup()
                                                                 .addComponent(btnCariAnggota)
                                                                 .addGap(18, 18, 18)
-                                                                .addComponent(jLabel6))))))))
+                                                                .addComponent(textAnggota))))))))
                                     .addComponent(btnSimpan, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(18, 18, 18))
@@ -222,15 +247,15 @@ public class FormPeminjaman1841720002Andy extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txtNamaPeminjam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIdAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCariAnggota)
-                    .addComponent(jLabel6))
+                    .addComponent(textAnggota))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txtJudulBuku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIdBuku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCariBuku)
-                    .addComponent(jLabel7))
+                    .addComponent(textJudulBuku))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -257,12 +282,65 @@ public class FormPeminjaman1841720002Andy extends javax.swing.JFrame {
 
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
         // TODO add your handling code here:
-
+        Peminjaman1841720002Andy pem = new Peminjaman1841720002Andy();
+        pem.setIdPeminjamanAndy(Integer.parseInt(txtIdPeminjaman.getText()));
+        pem.setAnggotaAndy(new Anggota1841720002Andy().getByIdAndy(Integer.parseInt(txtIdAnggota.getText())));
+        pem.setBukuAndy(new Buku1841720002Andy().getByIdAndy(Integer.parseInt(txtIdBuku.getText())));
+        pem.setTanggalPinjamAndy(txtTanggalKembali.getText());
+        pem.setTanggalKembaliAndy(txtTanggalKembali.getText());
+        pem.saveAndy();
+        tampilkanDataAndy();
+        
     }//GEN-LAST:event_btnSimpanActionPerformed
 
-    private void txtJudulBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtJudulBukuActionPerformed
+    private void txtIdBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdBukuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtJudulBukuActionPerformed
+    }//GEN-LAST:event_txtIdBukuActionPerformed
+
+    private void btnCariAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariAnggotaActionPerformed
+        // TODO add your handling code here:
+        Peminjaman1841720002Andy pem = new Peminjaman1841720002Andy();
+        pem.cariAnggotaAndy(Integer.parseInt(this.txtIdAnggota.getText()));
+        this.textAnggota.setText(pem.getAnggotaAndy().getNamaAndy());
+    }//GEN-LAST:event_btnCariAnggotaActionPerformed
+
+    private void btnCariBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariBukuActionPerformed
+        // TODO add your handling code here:
+        Peminjaman1841720002Andy pem = new Peminjaman1841720002Andy();
+        pem.cariBukuAndy(Integer.parseInt(this.txtIdBuku.getText()));
+        this.textJudulBuku.setText(pem.getBukuAndy().getJudulAndy());
+    }//GEN-LAST:event_btnCariBukuActionPerformed
+
+    private void tblPeminjamanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPeminjamanMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)this.tblPeminjaman.getModel();
+        int row = this.tblPeminjaman.getSelectedRow();
+
+        Peminjaman1841720002Andy pem = new Peminjaman1841720002Andy().getByIdAndy(Integer.parseInt(model.getValueAt(row, 0).toString()));
+
+        this.txtIdPeminjaman.setText(String.valueOf(pem.getIdPeminjamanAndy()));
+        this.txtIdAnggota.setText(String.valueOf(pem.getAnggotaAndy().getIdAnggotaAndy()));
+        this.txtIdBuku.setText(String.valueOf(pem.getBukuAndy().getIdBukuAndy()));
+        this.txtTanggalPinjam.setText(String.valueOf(pem.getTanggalPinjamAndy()));
+        this.txtTanggalKembali.setText(String.valueOf(pem.getTanggalKembaliAndy()));
+       
+    }//GEN-LAST:event_tblPeminjamanMouseClicked
+
+    private void btnTambahDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahDataActionPerformed
+        // TODO add your handling code here:
+        kosongkanFormAndy();
+    }//GEN-LAST:event_btnTambahDataActionPerformed
+
+    private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)tblPeminjaman.getModel();
+        int row = tblPeminjaman.getSelectedRow();
+        
+        Peminjaman1841720002Andy pem = new Peminjaman1841720002Andy().getByIdAndy(Integer.parseInt(model.getValueAt(row, 0).toString()));
+        pem.deleteAndy();
+        kosongkanFormAndy();
+        tampilkanDataAndy();
+    }//GEN-LAST:event_btnHapusActionPerformed
 
     /**
      * @param args the command line arguments
@@ -310,15 +388,15 @@ public class FormPeminjaman1841720002Andy extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblPeminjaman;
+    private javax.swing.JLabel textAnggota;
+    private javax.swing.JLabel textJudulBuku;
+    private javax.swing.JTextField txtIdAnggota;
+    private javax.swing.JTextField txtIdBuku;
     private javax.swing.JTextField txtIdPeminjaman;
-    private javax.swing.JTextField txtJudulBuku;
-    private javax.swing.JTextField txtNamaPeminjam;
     private javax.swing.JTextField txtTanggalKembali;
     private javax.swing.JTextField txtTanggalPinjam;
     // End of variables declaration//GEN-END:variables
