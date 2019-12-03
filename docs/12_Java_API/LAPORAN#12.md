@@ -8,7 +8,7 @@ Setelah menyelesaikan lembar kerja ini mahasiswa diharapkan mampu:
 3. Mengetahui perbedaan dari interface Set, List dan Map.
 4. Mengetahui penggunaan class-class dari interface Set, List, dan Map.
 5. Memahami koneksi database menggunakan JDBC dan JDBC API
-
+    
 ## Ringkasan Materi
 
 Pada praktikum materi yang akan dipelajari adalah tentang Collection dan Database. 
