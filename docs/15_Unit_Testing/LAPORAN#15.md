@@ -1,52 +1,88 @@
-# Laporan Praktikum #1 - Pengantar Konsep PBO
+# Laporan Praktikum #15 - Unit Testing
 
 ## Kompetensi
 
-(ketiklah kompetensi tiap praktikum di sini)
+Setelah menyelesaikan lembar kerja ini mahasiswa diharapkan mampu:
+1. Memahami konsep dan fungsi unit testing
+2. Menerapkan unit testing dengan JUnit pada program sederhana.
+3. Menerapkan unit testing dengan JUnit pada progam yang terkoneksi database
 
 ## Ringkasan Materi
 
-(berisi catatan penting pribadi selama praktikum berlangsung ataupun menemukan permasalahan khusus saat melakukan percobaan)
+Pada praktikum kali ini kita akan membuat sebuah mencoba melakukan unit testing. Unit testing ini sendiri adalah sebuah proses yang digunakan untuk melakukan testing terhadap setiap method-method atau komponen yang ada di dalam suatu class apakah method atau komponen tersebut sudah berjalan sesuai dengan diharapkan. Saat melakukan testing kita akan menggunakan library yang bernama JUnit. Pada unit testing ini nantinya akan ada dua jenis output, yakni output yang dihasilkan dan output yang diharapkan. Apabila output yang dihasilkan dan output yang diharapkan sama, maka hasilnya akan true.
 
 ## Percobaan
 
 ### Percobaan 1
 
-(berisi penjelasan percobaan 1. Jika ada rujukan ke file program, bisa dibuat linknya di sini.)
+Pada percobaan 1 kita akan mencoba melakukan unit testing sederhana dengan melakukan testing outputan sebuah string apakah antara output yang diharapkan dengan output yang dihasilkan apakah sudah sesuai atau tidak.
 
-`contoh screenshot yang benar, menampilkan 3 komponen, yaitu struktur project, kode program, dan hasil kompilasi`
+Berikut ini adalah screenshot hasil running dari kode program yang sudah kita buat pada percobaan 1.
 
-![contoh screenshot](img/contoh-schot1.PNG)
+![percobaan 1](img/percobaan1.PNG)
 
-Contoh link kode program : [ini contoh link ke kode program](../../src/1_Pengantar_Konsep_PBO/Contoh12345Habibie.java)
+Output tersebut menghasilkan output true karena hasil yang diharapkan dan yang dihasilkan adalah sama.
+
+Untuk lebih jelasnya silahkan klik link di bawah ini untuk melihat kode program pada percobaan 1.
+
+Berikut ini adalah link file kode program pada percobaan 1 : 
+<br>[1. LearnUnitTesting1841720002Andy](../../src/15_Unit_Testing/src/unittest/LearnUnitTesting1841720002Andy.java)
+<br>[2. MessageProcessor1841720002Andy](../../src/15_Unit_Testing/src/unittest/MessageProcessor1841720002Andy.java)
+<br>[3. MessageProcessor1841720002AndyTest](../../src/15_Unit_Testing/test/unittesting/MessageProcessor1841720002AndyTest.java)
+<br>[4. TestRunner1841720002Andy](../../src/15_Unit_Testing/test/unittesting/TestRunner1841720002Andy.java)
+
+
 
 ### Percobaan 2
 
-(berisi penjelasan percobaan 2. Jika ada rujukan ke file program, bisa dibuat linknya di sini.)
+Pada percobaan 2 kita akan mencoba melakukan unit testing pada percobaan yang ada di jobsheet ke-14 yakni class DBHelper1841720002Andy.java, FormKategori1841720002Andy.java, Kategori1841720002Andy.java dan TestBackendKategori1841720002.java
 
-`contoh screenshot yang benar, menampilkan 3 komponen, yaitu struktur project, kode program, dan hasil kompilasi`
+Berikut ini adalah screenshot hasil running dari kode program yang sudah kita buat pada percobaan 2.
 
-![contoh screenshot](img/contoh-schot1.PNG)
+![percobaan 2](img/percobaan2.PNG)
 
-Contoh link kode program : [ini contoh link ke kode program](../../src/1_Pengantar_Konsep_PBO/Contoh12345Habibie.java)
+Output tersebut menghasilkan output true karena method yang di test berjalan dengan lancar sesuai harapan.
 
-## Pertanyaan
+Untuk lebih jelasnya silahkan klik link di bawah ini untuk melihat kode program pada percobaan 2.
 
-(silakan ketik pertanyaan di sini beserta jawabannya.)
+Berikut ini adalah link file kode program pada percobaan 2 : 
+<br>[1. DBHelper1841720002Andy.java](../../src/15_Unit_Testing/src/database/DBHelper1841720002Andy.java)
+<br>[2. Kategori1841720002Andy.java](../../src/15_Unit_Testing/src/database/Kategori1841720002Andy.java)
+<br>[3. TestBackendKategori1841720002.java](../../src/15_Unit_Testing/src/database/TestBackendKategori1841720002Andy.java)
+<br>[4. FormKategori1841720002Andy.java](../../src/15_Unit_Testing/src/database/FormKategori1841720002Andy.java)
+<br>[5. FormKategori1841720002Andy.form](../../src/15_Unit_Testing/src/database/FormKategori1841720002Andy.form)
+<br>[6. Kategori1841720002AndyTest.java](../../src/15_Unit_Testing/test/database/Kategori1841720002AndyTest.java)
+<br>[7. TestRunner1841720002Andy.java](../../src/15_Unit_Testing/test/unittesting/TestRunner1841720002Andy.java)
+
+Apa yang terjadi ketika class Kategori1841720002Andy di run?<br>**Jawab:**<br>
+Tidak terjadi apa-apa, karena class Kategori1841720002Andy tidak memiliki method main.
 
 ## Tugas
 
-(silakan kerjakan tugas di sini beserta `screenshot` hasil kompilasi program. Jika ada rujukan ke file program, bisa dibuat linknya di sini.)
+Pada bagian tugas ini kita akan melakukan unit testing pada class Anggota1841720002Andy pada jobsheet ke-14. Langkah - langkah yang dilakukan mirip dengan percobaan 2.
 
-`contoh screenshot yang benar, menampilkan 3 komponen, yaitu struktur project, kode program, dan hasil kompilasi`
+Berikut ini adalah screenshot hasil running dari kode program yang sudah kita buat pada bagian tugas.
 
-![contoh screenshot](img/contoh-schot1.PNG)
+![tugas](img/tugas.PNG)
 
-Contoh link kode program : [ini contoh link ke kode program](../../src/1_Pengantar_Konsep_PBO/Contoh12345Habibie.java)
+Output tersebut menghasilkan output true karena method yang di test berjalan dengan lancar sesuai harapan.
+
+Untuk lebih jelasnya silahkan klik link di bawah ini untuk melihat kode program pada bagian tugas.
+
+Berikut ini adalah link file kode program pada percobaan 2 : 
+<br>[1. DBHelper1841720002Andy.java](../../src/15_Unit_Testing/src/database/DBHelper1841720002Andy.java)
+<br>[2. Anggota1841720002Andy.java](../../src/15_Unit_Testing/src/database/Anggota1841720002Andy.java)
+<br>[3. TestBackendKategori1841720002.java](../../src/15_Unit_Testing/src/database/TestBackendKategori1841720002Andy.java)
+<br>[4. FormKategori1841720002Andy.java](../../src/15_Unit_Testing/src/database/FormKategori1841720002Andy.java)
+<br>[5. FormKategori1841720002Andy.form](../../src/15_Unit_Testing/src/database/FormKategori1841720002Andy.form)
+<br>[6. Anggota1841720002AndyTest.java](../../src/15_Unit_Testing/test/database/Anggota1841720002AndyTest.java)
+<br>[7. TestRunner1841720002Andy.java](../../src/15_Unit_Testing/test/unittesting/TestRunner1841720002Andy.java)
 
 ## Kesimpulan
 
-(Berisi simpulan yang telah diperoleh selama praktikum atau belajar pada pertemuan ini)
+Kesimpulan yang saya dapatkan dari praktikum kali ini adalah tentang bagaimana cara melakukan unit testing sehingga kita bisa melakukan tes pada method-method yang ada di dalam sebuah class secara otomatis tanpa harus melakukan testing secara manual satu persatu method-method tersebut.
+
+Diharapkan setelah pertemuan ini kita bisa semakin paham bagaimana cara kerja OOP, semakin mudah ketika membuat program yang menggunakan konsep OOP dan semakin mudah ketika belajar materi selanjutnya.
 
 ## Pernyataan Diri
 
@@ -56,4 +92,4 @@ Jika saya melakukan plagiasi, kecurangan, atau melanggar hak kekayaan intelektua
 
 Ttd,
 
-***(silakan isi nama lengkap di sini)***
+***(Oktaviano Andy Suryadi)***
